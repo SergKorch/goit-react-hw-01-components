@@ -18,3 +18,9 @@ code {
   width: 350px;
 background-color: blue;
 }
+.statistics {
+  background-color: brown;
+}
+.friend-list {
+  background-color: yellow;
+}

@@ -16,26 +16,26 @@ export const App = () => {
       }}
     >
       <Profile
-        // username={user.username}
-        // tag={user.tag}
-        // location={user.location}
-        // avatar={user.avatar}
-        // stats={user.stats}
+      username={user.username}
+      tag={user.tag}
+      location={user.location}
+      avatar={user.avatar}
+      stats={user.stats}
       />
       <Statistics
         title="Upload stats"
-        // stats={data}
+        stats={data}
       />
       <Statistics
-      // stats={data}
+      stats={data}
       />
       <FriendList
-      // friends={friends}
+      friends={friends}
       />
-      <TransactionHistory 
-      // items={transactions} 
-      />;
-      ;
+      <TransactionHistory
+      items={transactions}
+      />
+      ; ;
     </div>
   );
 };
@@ -45,14 +45,14 @@ export const Profile = () => {
     <div class="profile">
       <div class="description">
         <img
-          src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
+          src={user.avatar}
           alt="User avatar"
           class="avatar"
           width="300"
         />
-        <p class="name">Petra Marica</p>
-        <p class="tag">@pmarica</p>
-        <p class="location">Salvador, Brasil</p>
+        <p class="name">{user.username}</p>
+        <p class="tag">{user.tag}</p>
+        <p class="location">{user.location}</p>
       </div>
 
       <ul class="stats">
@@ -76,14 +76,14 @@ export const Profile = () => {
 export const Statistics = () => {
   return (
     <section class="statistics">
-      <h2 class="title">Upload stats</h2>
+      <h2 class="title">{data[0].stats}</h2>
 
       <ul class="stat-list">
         <li class="item">
-          <span class="label">.docx</span>
-          <span class="percentage">4%</span>
+          <span class="label">{data[0].label}</span>
+          <span class="percentage">{data[0].percentage}</span>
         </li>
-        <li class="item">
+        {/* <li class="item">
           <span class="label">.mp3</span>
           <span class="percentage">14%</span>
         </li>
@@ -94,7 +94,7 @@ export const Statistics = () => {
         <li class="item">
           <span class="label">.mp4</span>
           <span class="percentage">12%</span>
-        </li>
+        </li> */}
       </ul>
     </section>
   );
@@ -102,13 +102,17 @@ export const Statistics = () => {
 
 export const FriendList = () => {
   return (
+    <ul class="friend-list">
+  
+
     <li class="item">
-      <span class="status"></span>
-      <img class="avatar" src="" alt="User avatar" width="48" />
-      <p class="name"></p>
-    </li>
+      <span class="status">{friends[0].isOnline}</span>
+      <img class="avatar" src={friends[0].avatar} alt="User avatar" width="48" />
+      <p class="name">{friends[0].name}</p>
+    </li></ul>
   );
 };
+
 export const TransactionHistory = () => {
   return (
     <table class="transaction-history">
