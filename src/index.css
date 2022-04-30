@@ -67,12 +67,17 @@ code {
 }
 
 .statistics {
-  display: block;
   background-color: brown;
+  display: block;
+  height: 300px;
 }
 .friend-list {
+  display: block;
+  height: 300px;
   background-color: yellow;
 }
 .transaction-history {
+  display: block;
+  height: 300px;
   background-color: red;
 }
