@@ -4,6 +4,7 @@ import friends from './json-hw/friends.json';
 import transactions from './json-hw/transactions.json';
 import { Profile } from './Profile/index';
 import { Statistics } from './Statistics/index';
+import { FriendList } from './Friends/index';
 
 export const App = () => {
   return (
@@ -25,35 +26,19 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       /> */}
-       <Statistics
+       {/* <Statistics
         stats={data}
-      />
-      {/*<FriendList
+      /> */}
+      <FriendList
       friends={friends}
       />
-      <TransactionHistory
+      {/*<TransactionHistory
       items={transactions}
       /> */}
     </div>
   );
 };
 
-export const FriendList = () => {
-  return (
-    <ul className="friend-list">
-      <li className="item">
-        <span className="status">{friends[0].isOnline}</span>
-        <img
-          className="avatar"
-          src={friends[0].avatar}
-          alt="User avatar"
-          width="48"
-        />
-        <p className="name">{friends[0].name}</p>
-      </li>
-    </ul>
-  );
-};
 
 export const TransactionHistory = () => {
   return (
