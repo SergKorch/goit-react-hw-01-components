@@ -5,6 +5,7 @@ import transactions from './json-hw/transactions.json';
 import { Profile } from './Profile/index';
 import { Statistics } from './Statistics/index';
 import { FriendList } from './Friends/index';
+import { TransactionHistory } from './Transactions/index';
 
 export const App = () => {
   return (
@@ -19,50 +20,17 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      {/* <Profile
+      <Profile
         username={user.username}
         tag={user.tag}
         location={user.location}
         avatar={user.avatar}
         stats={user.stats}
-      /> */}
-       {/* <Statistics
-        stats={data}
-      /> */}
-      <FriendList
-      friends={friends}
       />
-      {/*<TransactionHistory
-      items={transactions}
-      /> */}
+      <Statistics stats={data} />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
     </div>
   );
 };
 
-
-export const TransactionHistory = () => {
-  return (
-    <table className="transaction-history">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td>Invoice</td>
-          <td>125</td>
-          <td>USD</td>
-        </tr>
-        <tr>
-          <td>Withdrawal</td>
-          <td>85</td>
-          <td>USD</td>
-        </tr>
-      </tbody>
-    </table>
-  );
-};

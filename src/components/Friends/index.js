@@ -3,7 +3,7 @@ export const FriendList = ({ friends }) => {
   return (
     <ul className="friend-list">
       {friends.map(friend => (
-        <li className="item">
+        <li key={friend.id} className="item">
           <span className="status">{friend.isOnline}</span>
           <img
             className="avatar"
