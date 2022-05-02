@@ -28,4 +28,8 @@ function getColor(type) {
   {
     return "yellow";
   }
+  else if(type === "deposit")
+  {
+    return "brown";
+  }
 }
