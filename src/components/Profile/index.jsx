@@ -1,3 +1,4 @@
+import s from './index.module.css';
 export const Profile = ({ avatar, username, tag, location, stats }) => {
   return (
     <div className="profile">

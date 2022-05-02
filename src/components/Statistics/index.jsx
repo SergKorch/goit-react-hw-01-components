@@ -1,3 +1,4 @@
+import s from './index.module.css';
 export const Statistics = ({ stats }) => {
   return (
     <section className="statistics">

@@ -1,7 +1,7 @@
+import s from './index.module.css';
 export const TransactionHistory = ({ items }) => {
-  const total=1;
   return (
-    <table className="transaction-history">
+    <table className={s.transactionHistorys}>
       <thead>
         <tr>
           <th>Type</th>
