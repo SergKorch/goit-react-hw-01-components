@@ -9,7 +9,8 @@ import { TransactionHistory } from './Transactions/index';
 
 export const App = () => {
   return (
-    <div
+    <div 
+    className='main'
       style={{
         height: '100vh',
         display: 'flex',

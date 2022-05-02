@@ -2,7 +2,7 @@ import s from './index.module.css';
 export const FriendList = ({ friends }) => {
   console.log(friends);
   return (
-    <ul className={s.friend-list}>
+    <ul className={s.friendList}>
       {friends.map(friend => (
         <li key={friend.id} className={s.item}>
           <span

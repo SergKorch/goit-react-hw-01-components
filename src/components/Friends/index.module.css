@@ -1,4 +1,4 @@
-.friend-list {
+.friendList {
     display: inline-block;
     width: 300px;
     font-size: 20px;
@@ -6,7 +6,7 @@
     padding: 0;
     list-style-type: none;
   }
-  .friend-list li {
+  .friendList li {
       display: flex;
       align-items: center;
       padding: 15px;
