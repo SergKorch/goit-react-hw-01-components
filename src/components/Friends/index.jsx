@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import s from './index.module.css';
 export const FriendList = ({ friends }) => {
   console.log(friends);
@@ -30,3 +31,13 @@ function getColor(status) {
     return "red";
   }
 }
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      item: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      avatar: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    })
+  ),
+};

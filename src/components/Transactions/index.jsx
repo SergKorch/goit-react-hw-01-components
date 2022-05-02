@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import s from './index.module.css';
 export const TransactionHistory = ({ items }) => {
   return (
@@ -33,3 +34,13 @@ function getColor(type) {
     return "brown";
   }
 }
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+      currency: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    })
+  ),
+};

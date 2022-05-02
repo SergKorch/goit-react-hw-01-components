@@ -1,5 +1,14 @@
+import PropTypes from 'prop-types';
 import s from './index.module.css';
-export const Profile = ({ avatar, username, tag, location, stats }) => {
+export const Profile = ({
+  avatar,
+  username,
+  tag,
+  location,
+  followers,
+  views,
+  likes,
+}) => {
   return (
     <div className={s.profile}>
       <div className={s.description}>
@@ -11,17 +20,26 @@ export const Profile = ({ avatar, username, tag, location, stats }) => {
       <ul className={s.stats}>
         <li>
           <span className={s.label}>Followers</span>
-          <span className={s.quantity}>{stats.followers}</span>
+          <span className={s.quantity}>{followers}</span>
         </li>
         <li>
           <span className={s.label}>Views</span>
-          <span className={s.quantity}>{stats.views}</span>
+          <span className={s.quantity}>{views}</span>
         </li>
         <li>
           <span className={s.label}>Likes</span>
-          <span className={s.quantity}>{stats.likes}</span>
+          <span className={s.quantity}>{likes}</span>
         </li>
       </ul>
     </div>
   );
+};
+Profile.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  likes: PropTypes.number.isRequired,
+  followers: PropTypes.number.isRequired,
+  views: PropTypes.number.isRequired,
 };
