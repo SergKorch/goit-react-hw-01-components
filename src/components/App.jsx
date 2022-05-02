@@ -9,8 +9,8 @@ import { TransactionHistory } from './Transactions/index';
 
 export const App = () => {
   return (
-    <div 
-    className='main'
+    <div
+      className="main"
       style={{
         height: '100vh',
         display: 'flex',
@@ -30,7 +30,7 @@ export const App = () => {
       />
       <Statistics stats={data} />
       <FriendList friends={friends} />
-      <TransactionHistory items={transactions} /> 
+      <TransactionHistory items={transactions} />
     </div>
   );
 };

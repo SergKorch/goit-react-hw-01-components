@@ -6,8 +6,10 @@ export const Statistics = ({ stats }) => {
       <h2 className={s.title}>Upload stats</h2>
       <ul className={s.statList}>
         {stats.map(item => (
-          <li key={item.id} className={s.item}
-          style={{backgroundColor: getRandomHexColor()}}
+          <li
+            key={item.id}
+            className={s.item}
+            style={{ backgroundColor: getRandomHexColor() }}
           >
             <span className={s.label}>{item.label}</span>
             <span className={s.percentage}>{item.percentage}%</span>

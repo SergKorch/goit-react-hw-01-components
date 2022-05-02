@@ -12,7 +12,7 @@ export const TransactionHistory = ({ items }) => {
       </thead>
       <tbody>
         {items.map(item => (
-          <tr key={item.id} style={{backgroundColor: getColor(item.type)}}>
+          <tr key={item.id} style={{ backgroundColor: getColor(item.type) }}>
             <td>{item.type}</td>
             <td>{item.amount}</td>
             <td>{item.currency}</td>
@@ -23,15 +23,12 @@ export const TransactionHistory = ({ items }) => {
   );
 };
 function getColor(type) {
-  if (type === "invoice") {
-    return "green";
-  } else if(type === "payment")
-  {
-    return "yellow";
-  }
-  else if(type === "deposit")
-  {
-    return "brown";
+  if (type === 'invoice') {
+    return 'green';
+  } else if (type === 'payment') {
+    return 'yellow';
+  } else if (type === 'deposit') {
+    return 'brown';
   }
 }
 TransactionHistory.propTypes = {
