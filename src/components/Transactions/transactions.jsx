@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import s from './transactions.module.css';
+
 export const TransactionHistory = ({ items }) => {
   return (
     <table className={s.transactionHistorys}>
@@ -11,17 +12,18 @@ export const TransactionHistory = ({ items }) => {
         </tr>
       </thead>
       <tbody>
-        {items.map(item => (
-          <tr key={item.id} style={{ backgroundColor: getColor(item.type) }}>
-            <td>{item.type}</td>
-            <td>{item.amount}</td>
-            <td>{item.currency}</td>
+        {items.map(({ id, type, amount, currency }) => (
+          <tr key={id} style={{ backgroundColor: getColor(type) }}>
+            <td>{type}</td>
+            <td>{amount}</td>
+            <td>{currency}</td>
           </tr>
         ))}
       </tbody>
     </table>
   );
 };
+
 function getColor(type) {
   if (type === 'invoice') {
     return 'green';
@@ -31,11 +33,12 @@ function getColor(type) {
     return 'brown';
   }
 }
+
 TransactionHistory.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       type: PropTypes.string.isRequired,
-      amount: PropTypes.number.isRequired,
+      amount: PropTypes.string.isRequired,
       currency: PropTypes.string.isRequired,
       id: PropTypes.string.isRequired,
     })
