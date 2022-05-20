@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import s from './profile.module.css';
 
-export const Profile = ({ avatar, username, tag, location, stats }) => {
-  const { followers, views, likes } = stats;
+export const Profile = ({ avatar, username, tag, location, stats: { followers, views, likes }, }) => {
   return (
     <div className={s.profile}>
       <div className={s.description}>
@@ -34,5 +33,9 @@ Profile.propTypes = {
   username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  stats: PropTypes.objectOf(PropTypes.number).isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
 };
