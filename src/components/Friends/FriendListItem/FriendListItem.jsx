@@ -1,8 +1,8 @@
 import s from '../friends.module.css';
 
-export const FriendListItem = ({ avatar, name, isOnline }) => {
+export const FriendListItem = ({ avatar, name, isOnline, id }) => {
   return (
-    <li className={s.item}>
+    <li key={id} className={s.item}>
       <span
         className={s.status}
         style={{ backgroundColor: getColor(isOnline) }}
